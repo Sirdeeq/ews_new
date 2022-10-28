@@ -7,15 +7,29 @@ import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 
 // assets
 import { EditOutlined, ProfileOutlined, LogoutOutlined, UserOutlined, WalletOutlined } from '@ant-design/icons';
+import { useNavigate } from '../../../../../../node_modules/react-router-dom/dist/index';
 
 // ==============================|| HEADER PROFILE - PROFILE TAB ||============================== //
 
 const ProfileTab = ({ handleLogout }) => {
     const theme = useTheme();
-
+    const navigate = useNavigate();
     const [selectedIndex, setSelectedIndex] = useState(0);
     const handleListItemClick = (event, index) => {
         setSelectedIndex(index);
+        switch (index) {
+            case 0:
+                navigate('/admin/dashboard/editprofile');
+                break;
+            case 1:
+                navigate('/admin/dashboard/profile');
+                break;
+            case 3:
+                navigate('/admin/dashboard/changepicture');
+                break;
+            default:
+                break;
+        }
     };
 
     return (
@@ -32,19 +46,18 @@ const ProfileTab = ({ handleLogout }) => {
                 </ListItemIcon>
                 <ListItemText primary="View Profile" />
             </ListItemButton>
-
             <ListItemButton selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
                 <ListItemIcon>
                     <ProfileOutlined />
                 </ListItemIcon>
-                <ListItemText primary="Social Profile" />
+                <ListItemText primary="Change profile picture" />
             </ListItemButton>
-            <ListItemButton selected={selectedIndex === 4} onClick={(event) => handleListItemClick(event, 4)}>
+            {/* <ListItemButton selected={selectedIndex === 4} onClick={(event) => handleListItemClick(event, 4)}>
                 <ListItemIcon>
                     <WalletOutlined />
                 </ListItemIcon>
                 <ListItemText primary="Billing" />
-            </ListItemButton>
+            </ListItemButton> */}
             <ListItemButton selected={selectedIndex === 2} onClick={handleLogout}>
                 <ListItemIcon>
                     <LogoutOutlined />

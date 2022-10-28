@@ -32,7 +32,7 @@ import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 
 // ============================|| FIREBASE - REGISTER ||============================ //
 
-const AuthRegister = () => {
+const AuthChange = () => {
     const [level, setLevel] = useState();
     const [showPassword, setShowPassword] = useState(false);
     const handleClickShowPassword = () => {
@@ -260,4 +260,4 @@ const AuthRegister = () => {
     );
 };
 
-export default AuthRegister;
+export default AuthChange;

@@ -28,6 +28,7 @@ import AnimateButton from 'components/@extended/AnimateButton';
 
 // assets
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
+import { useNavigate } from '../../../../node_modules/react-router-dom/dist/index';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
@@ -42,12 +43,12 @@ const AuthLogin = () => {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-
+    const navigate = useNavigate();
     return (
         <>
             <Formik
                 initialValues={{
-                    email: 'info@codedthemes.com',
+                    email: 'agency@agency.com',
                     password: '123456',
                     submit: null
                 }}
@@ -59,6 +60,7 @@ const AuthLogin = () => {
                     try {
                         setStatus({ success: false });
                         setSubmitting(false);
+                        navigate('/admin/dashboard/default');
                     } catch (err) {
                         setStatus({ success: false });
                         setErrors({ submit: err.message });
@@ -163,14 +165,6 @@ const AuthLogin = () => {
                                         Login
                                     </Button>
                                 </AnimateButton>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <Divider>
-                                    <Typography variant="caption"> Login with</Typography>
-                                </Divider>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <FirebaseSocial />
                             </Grid>
                         </Grid>
                     </form>
