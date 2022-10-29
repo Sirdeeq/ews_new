@@ -14,6 +14,7 @@ const SignUp = Loadable(lazy(() => import('pages/authentication/Register')));
 const ChangePicture = Loadable(lazy(() => import('pages/extra-pages/ChangePicture')));
 const EditProfile = Loadable(lazy(() => import('pages/authentication/EditProfile')));
 const Warnings = Loadable(lazy(() => import('pages/extra-pages/Warnings')));
+const AddNewWarnings = Loadable(lazy(() => import('pages/extra-pages/AddNewWarnings')));
 const Reports = Loadable(lazy(() => import('pages/extra-pages/Reports')));
 const History = Loadable(lazy(() => import('pages/extra-pages/History')));
 const Requests = Loadable(lazy(() => import('pages/extra-pages/Requests')));
@@ -84,6 +85,10 @@ const LoginRoutes = {
                         {
                             path: 'editprofile',
                             element: <EditProfile />
+                        },
+                        {
+                            path: 'new-warning',
+                            element: <AddNewWarnings />
                         }
                     ]
                 }

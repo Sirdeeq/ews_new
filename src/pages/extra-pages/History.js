@@ -22,9 +22,7 @@ const columns = [
     },
     { field: 'firtName', headerName: 'Status', width: 130 }
 ];
-const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 , firtName: 'new'}
-];
+const rows = [{ id: 1, lastName: 'Snow', firstName: 'Jon', age: 35, firtName: 'new' }];
 
 export default function History() {
     return (
