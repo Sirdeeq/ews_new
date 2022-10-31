@@ -4,6 +4,7 @@ import { lazy } from 'react';
 import Loadable from 'components/Loadable';
 import MinimalLayout from 'layout/MinimalLayout';
 import MainLayout from 'layout/MainLayout/index';
+import EditWarning from 'pages/extra-pages/EditWarning';
 
 // render - login
 
@@ -15,6 +16,7 @@ const ChangePicture = Loadable(lazy(() => import('pages/extra-pages/ChangePictur
 const EditProfile = Loadable(lazy(() => import('pages/authentication/EditProfile')));
 const Warnings = Loadable(lazy(() => import('pages/extra-pages/Warnings')));
 const AddNewWarnings = Loadable(lazy(() => import('pages/extra-pages/AddNewWarnings')));
+const ViewWarning = Loadable(lazy(() => import('pages/extra-pages/ViewWarning')));
 const Reports = Loadable(lazy(() => import('pages/extra-pages/Reports')));
 const History = Loadable(lazy(() => import('pages/extra-pages/History')));
 const Requests = Loadable(lazy(() => import('pages/extra-pages/Requests')));
@@ -89,6 +91,14 @@ const LoginRoutes = {
                         {
                             path: 'new-warning',
                             element: <AddNewWarnings />
+                        },
+                        {
+                            path: 'edit-warning',
+                            element: <EditWarning />
+                        },
+                        {
+                            path: 'view-warning',
+                            element: <ViewWarning />
                         }
                     ]
                 }

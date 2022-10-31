@@ -23,13 +23,14 @@ import { DataGrid } from '@mui/x-data-grid';
 import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 
 // assets
-import { GiftOutlined, MessageOutlined, SettingOutlined, PlusOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, PlusOutlined, EyeOutlined } from '@ant-design/icons';
 import avatar1 from 'assets/images/users/avatar-1.png';
 import avatar2 from 'assets/images/users/avatar-2.png';
 import avatar3 from 'assets/images/users/avatar-3.png';
 import avatar4 from 'assets/images/users/avatar-4.png';
 import { IconButton } from '../../../node_modules/@mui/material/index';
 import AddNewWarnings from './AddNewWarnings';
+import AnimateButton from 'components/@extended/AnimateButton';
 
 // avatar style
 const avatarSX = {
@@ -70,28 +71,75 @@ const DashboardDefault = () => {
     const [value, setValue] = useState('today');
     const [slot, setSlot] = useState('week');
     const columns = [
-        { field: 'id', headerName: 'S/N', width: 70 },
-        { field: 'title', headerName: 'Title', width: 130 },
-        { field: 'disaster', headerName: 'Disaster', width: 130 },
+        { field: 'id', headerName: 'S/N', width: 100 },
+        { field: 'title', headerName: 'Title', width: 200 },
+        { field: 'disaster', headerName: 'Disaster', width: 200 },
         {
             field: 'severity',
             headerName: 'Severity',
-            type: 'number',
-            width: 140
+            width: 200
         },
         {
             field: 'status',
             headerName: 'Status',
             description: 'This column has a value getter and is not sortable.',
             sortable: false,
-            width: 130,
+            width: 150,
             valueGetter: (params) => `${params.row.firstName || ''} ${params.row.lastName || ''}`
         },
-        { field: 'date', headerName: 'Date', width: 130 },
-        { field: 'action', headerName: 'Action', width: 150 }
+        { field: 'date', headerName: 'Date', width: 200 },
+        {
+            field: 'action',
+            headerName: 'Action',
+            width: 350,
+            renderCell: () => (
+                <Button>
+                    <IconButton
+                        // component={AddNewWarnings}
+                        href="/admin/dashboard/view-warning"
+                        // target="_blank"
+                        disableRipple
+                        // color="secondary"
+                        title=""
+                        sx={{ color: 'text.primary' }}
+                    >
+                        <EyeOutlined />
+                    </IconButton>
+                    <IconButton
+                        // component={AddNewWarnings}
+                        href="/admin/dashboard/edit-warning"
+                        // target="_blank"
+                        disableRipple
+                        // color="secondary"
+                        title=""
+                        sx={{ color: 'text.primary' }}
+                    >
+                        <EditOutlined />
+                    </IconButton>
+                    <IconButton
+                        // component={AddNewWarnings}
+                        // target="_blank"
+                        disableRipple
+                        // color="secondary"
+                        title=""
+                        // sx={{ color: 'text.primary', bgcolor: 'grey.100' }}
+                    >
+                        <DeleteOutlined />
+                    </IconButton>
+                </Button>
+            )
+        }
     ];
     const rows = [
-        { id: 1, title: 'New Title', disaster: 'Flooding  ', severity: 35, status: 'new', date: '12/12/1212', action: 'View Button' }
+        {
+            id: 1,
+            title: 'New Title',
+            disaster: 'Flooding  ',
+            severity: 35,
+            status: 'new',
+            date: '12/12/1212'
+            // action: () => <div>Hello</div>
+        }
     ];
     return (
         <Grid container rowSpacing={4.5} columnSpacing={2.75}>
@@ -124,8 +172,18 @@ const DashboardDefault = () => {
             </Grid>
 
             <Grid item md={8} sx={{ display: { sm: 'none', md: 'block', lg: 'none' } }} />
-            <div style={{ height: 500, width: '100%' }}>
-                <DataGrid rows={rows} columns={columns} pageSize={5} rowsPerPageOptions={[5]} checkboxSelection />
+            <div style={{ height: 400, width: '100%', marginLeft: '20px', marginTop: '40px' }}>
+                <DataGrid
+                    rows={rows}
+                    columns={columns}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                    checkboxSelection
+                    disableSelectionOnClick
+                    border={10}
+                    editable={true}
+                    // experimentalFeatures={{ newEditingApi: true }}
+                />
             </div>
         </Grid>
     );

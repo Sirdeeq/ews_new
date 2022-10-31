@@ -127,9 +127,8 @@ const EditWarningForm = () => {
                     submit: null
                 }}
                 validationSchema={Yup.object().shape({
-                    agency_id: Yup.string().max(255).required('Id is required'),
-                    sdate: Yup.date().required('Date is required'),
-                    edate: Yup.date().required('Date is required')
+                    agency_id: Yup.string().max(255).required('First Name is required'),
+                    title: Yup.string().max(255).required('Last Name is required')
                 })}
                 onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
                     try {
@@ -147,7 +146,7 @@ const EditWarningForm = () => {
                     <form noValidate onSubmit={handleSubmit}>
                         <Grid item xs={12} md={12}>
                             <center>
-                                <h1>Add New Warning</h1>
+                                <h1>Edit Warning</h1>
                             </center>
                         </Grid>
                         <Grid container spacing={3}>
@@ -181,7 +180,7 @@ const EditWarningForm = () => {
                                     <InputLabel htmlFor="title-signup">Title</InputLabel>
                                     <OutlinedInput
                                         fullWidth
-                                        // error={Boolean(touched.title && errors.title)}
+                                        error={Boolean(touched.title && errors.title)}
                                         id="title-signup"
                                         type="title"
                                         value={values.title}
@@ -385,12 +384,12 @@ const EditWarningForm = () => {
                                         variant="contained"
                                         color="primary"
                                         onClick={() => {
-                                            // isSubmitting();
-                                            // handleSubmit();
+                                            isSubmitting();
+                                            handleSubmit();
                                             goo();
                                         }}
                                     >
-                                        Add Warning
+                                        Update
                                     </Button>
                                 </AnimateButton>
                             </Grid>
