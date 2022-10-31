@@ -14,7 +14,7 @@ import AuthBackground from 'assets/images/auth/AuthBackground';
 // ==============================|| AUTHENTICATION - WRAPPER ||============================== //
 
 const EditWrapper = ({ children }) => (
-    <Box sx={{ width: 1000, height: 300 }}>
+    <Box sx={{ width: '100%', height: 300 }}>
         <AuthBackground />
         <Grid
             container

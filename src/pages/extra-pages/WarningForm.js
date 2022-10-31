@@ -30,6 +30,7 @@ import { strengthColor, strengthIndicator } from 'utils/password-strength';
 import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
 import { Hidden, TextField } from '../../../node_modules/@mui/material/index';
 import MultipleSelect from './MultipleSelect';
+import { useNavigate } from '../../../node_modules/react-router-dom/dist/index';
 
 // ============================|| FIREBASE - REGISTER ||============================ //
 
@@ -48,7 +49,10 @@ const WarningForm = () => {
         const temp = strengthIndicator(value);
         setLevel(strengthColor(temp));
     };
-
+    const navigate = useNavigate();
+    const goo = () => {
+        navigate('/admin/dashboard/warnings');
+    };
     useEffect(() => {
         changePassword('');
     }, []);
@@ -335,6 +339,7 @@ const WarningForm = () => {
                                         // label="Multiline"
                                         multiline
                                         rows={2}
+                                        error={Boolean(touched.title && errors.title)}
                                     />
                                 </Stack>
                             </Grid>
@@ -361,12 +366,17 @@ const WarningForm = () => {
                                 <AnimateButton>
                                     <Button
                                         disableElevation
-                                        disabled={isSubmitting}
+                                        // disabled={isSubmitting}
                                         fullWidth
                                         size="large"
                                         type="submit"
                                         variant="contained"
                                         color="primary"
+                                        onClick={() => {
+                                            isSubmitting();
+                                            handleSubmit();
+                                            goo();
+                                        }}
                                     >
                                         Add Warning
                                     </Button>
