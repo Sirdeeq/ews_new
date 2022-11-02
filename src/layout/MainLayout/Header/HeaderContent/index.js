@@ -6,6 +6,7 @@ import { PlusSquareOutlined } from '@ant-design/icons';
 import Search from './Search';
 import Profile from './Profile';
 import Notification from './Notification';
+import AddAll from './AddAll';
 import MobileSection from './MobileSection';
 
 // ==============================|| HEADER - CONTENT ||============================== //
@@ -18,17 +19,7 @@ const HeaderContent = () => {
             {!matchesXs && <Search />}
             {matchesXs && <Box sx={{ width: '100%', ml: 1 }} />}
 
-            <IconButton
-                component={Link}
-                href=""
-                target="_blank"
-                disableRipple
-                color="secondary"
-                title=""
-                sx={{ color: 'text.primary', bgcolor: 'grey.100' }}
-            >
-                <PlusSquareOutlined />
-            </IconButton>
+            <AddAll />
 
             <Notification />
             {!matchesXs && <Profile />}

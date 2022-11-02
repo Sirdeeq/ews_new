@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { lazy } from 'react';
 
 // project import
@@ -5,6 +6,7 @@ import Loadable from 'components/Loadable';
 import MinimalLayout from 'layout/MinimalLayout';
 import MainLayout from 'layout/MainLayout/index';
 import EditWarning from 'pages/extra-pages/EditWarning';
+import ViewUser from 'pages/extra-pages/ViewUser';
 
 // render - login
 
@@ -18,8 +20,11 @@ const Warnings = Loadable(lazy(() => import('pages/extra-pages/Warnings')));
 const AddNewWarnings = Loadable(lazy(() => import('pages/extra-pages/AddNewWarnings')));
 const ViewWarning = Loadable(lazy(() => import('pages/extra-pages/ViewWarning')));
 const Reports = Loadable(lazy(() => import('pages/extra-pages/Reports')));
+const Users = Loadable(lazy(() => import('pages/extra-pages/Users')));
+const Contents = Loadable(lazy(() => import('pages/extra-pages/Content')));
 const History = Loadable(lazy(() => import('pages/extra-pages/History')));
 const Requests = Loadable(lazy(() => import('pages/extra-pages/Requests')));
+// const Requests = Loadable(lazy(() => import('pages/extra-pages/Requests')));
 const Statistics = Loadable(lazy(() => import('pages/extra-pages/Statistics')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
 
@@ -99,6 +104,18 @@ const LoginRoutes = {
                         {
                             path: 'view-warning',
                             element: <ViewWarning />
+                        },
+                        {
+                            path: 'users',
+                            element: <Users />
+                        },
+                        {
+                            path: 'view-users',
+                            element: <ViewUser />
+                        },
+                        {
+                            path: 'contents',
+                            element: <Contents />
                         }
                     ]
                 }

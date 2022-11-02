@@ -27,7 +27,7 @@ import AnimateButton from 'components/@extended/AnimateButton';
 import { strengthColor, strengthIndicator } from 'utils/password-strength';
 
 // assets
-import { EyeOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
+import { PlusOutlined } from '@ant-design/icons';
 import { Hidden, TextField } from '../../../node_modules/@mui/material/index';
 import MultipleSelect from './MultipleSelect';
 import { useNavigate } from '../../../node_modules/react-router-dom/dist/index';
@@ -147,11 +147,13 @@ const EditWarningForm = () => {
                     <form noValidate onSubmit={handleSubmit}>
                         <Grid item xs={12} md={12}>
                             <center>
+                                <PlusOutlined style={{ fontSize: '60px' }} />
+                                <br />
                                 <h1>Add New Warning</h1>
                             </center>
                         </Grid>
                         <Grid container spacing={3}>
-                            <Grid item xs={12} md={4}>
+                            {/* <Grid item xs={12} md={4}>
                                 <Stack spacing={1}>
                                     <InputLabel htmlFor="agency_id">Agency Id</InputLabel>
                                     <TextField
@@ -175,8 +177,8 @@ const EditWarningForm = () => {
                                         ))}
                                     </TextField>
                                 </Stack>
-                            </Grid>
-                            <Grid item xs={12} md={4}>
+                            </Grid> */}
+                            <Grid item xs={12} md={12}>
                                 <Stack spacing={1}>
                                     <InputLabel htmlFor="title-signup">Title</InputLabel>
                                     <OutlinedInput
@@ -193,7 +195,7 @@ const EditWarningForm = () => {
                                     />
                                 </Stack>
                             </Grid>
-                            <Grid item xs={12} md={4}>
+                            <Grid item xs={12} md={6}>
                                 <Stack spacing={1}>
                                     <InputLabel htmlFor="disaster">Disaster Type</InputLabel>
                                     <TextField
@@ -217,7 +219,7 @@ const EditWarningForm = () => {
                                     </TextField>
                                 </Stack>
                             </Grid>
-                            <Grid item xs={12} md={4}>
+                            <Grid item xs={12} md={6}>
                                 <Stack spacing={1}>
                                     <InputLabel htmlFor="disaster">Severity</InputLabel>
                                     <TextField
@@ -241,7 +243,7 @@ const EditWarningForm = () => {
                                     </TextField>
                                 </Stack>
                             </Grid>
-                            <Grid item xs={12} md={4}>
+                            <Grid item xs={12} md={6}>
                                 <Stack spacing={1}>
                                     <InputLabel htmlFor="title-signup">Longitide</InputLabel>
                                     <OutlinedInput
@@ -259,7 +261,7 @@ const EditWarningForm = () => {
                                     />
                                 </Stack>
                             </Grid>
-                            <Grid item xs={12} md={4}>
+                            <Grid item xs={12} md={6}>
                                 <Stack spacing={1}>
                                     <InputLabel htmlFor="title-signup">Latitude</InputLabel>
                                     <OutlinedInput
