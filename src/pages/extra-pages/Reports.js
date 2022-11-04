@@ -100,6 +100,7 @@ const Report = () => {
                     <IconButton
                         // component={AddNewWarnings}
                         // target="_blank"
+                        href="/admin/dashboard/view-reports"
                         disableRipple
                         // color="secondary"
                         title=""

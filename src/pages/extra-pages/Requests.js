@@ -97,6 +97,7 @@ const Request = () => {
                     <IconButton
                         // component={AddNewWarnings}
                         // target="_blank"
+                        href="/admin/dashboard/view-requests"
                         disableRipple
                         // color="secondary"
                         title=""

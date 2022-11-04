@@ -8,6 +8,7 @@ import MainLayout from 'layout/MainLayout/index';
 import EditWarning from 'pages/extra-pages/EditWarning';
 import ViewUser from 'pages/extra-pages/ViewUser';
 import AddNewContact from 'pages/extra-pages/AddNewContact';
+// import ViewReports from 'pages/extra-pages/ViewReport';
 
 // render - login
 
@@ -26,8 +27,9 @@ const Contents = Loadable(lazy(() => import('pages/extra-pages/Content')));
 const History = Loadable(lazy(() => import('pages/extra-pages/History')));
 const Requests = Loadable(lazy(() => import('pages/extra-pages/Requests')));
 const Contacts = Loadable(lazy(() => import('pages/extra-pages/Contacts')));
-// const Requests = Loadable(lazy(() => import('pages/extra-pages/Requests')));
-const Statistics = Loadable(lazy(() => import('pages/extra-pages/Statistics')));
+const ViewRequests = Loadable(lazy(() => import('pages/extra-pages/ViewRequests')));
+const ViewReport = Loadable(lazy(() => import('pages/extra-pages/ViewReport')));
+const Statistics = Loadable(lazy(() => import('pages/extra-pages/Statistic')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
 
 // ==============================|| AUTH ROUTING ||============================== //
@@ -116,6 +118,14 @@ const LoginRoutes = {
                             element: <ViewUser />
                         },
                         {
+                            path: 'view-reports',
+                            element: <ViewReport />
+                        },
+                        {
+                            path: 'view-requests',
+                            element: <ViewRequests />
+                        },
+                        {
                             path: 'contents',
                             element: <Contents />
                         },
@@ -132,6 +142,10 @@ const LoginRoutes = {
                         {
                             path: 'new-contact',
                             element: <AddNewContact />
+                        },
+                        {
+                            path: 'statistics',
+                            element: <Statistics />
                         }
                     ]
                 }

@@ -19,13 +19,13 @@ import {
 } from '@mui/material';
 
 // project import
-import OrdersTable from './OrdersTable';
-import IncomeAreaChart from './IncomeAreaChart';
-import MonthlyBarChart from './MonthlyBarChart';
-import ReportAreaChart from './ReportAreaChart';
-import SalesColumnChart from './SalesColumnChart';
-import MainCard from 'components/MainCard';
-import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
+import OrdersTable from '../dashboard/OrdersTable';
+import IncomeAreaChart from '../dashboard//IncomeAreaChart';
+import MonthlyBarChart from '../dashboard//MonthlyBarChart';
+import ReportAreaChart from '../dashboard//ReportAreaChart';
+import SalesColumnChart from '../dashboard//SalesColumnChart';
+// import MainCard from 'components/MainCard';
+// import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
 
 // assets
 import { GiftOutlined, MessageOutlined, SettingOutlined } from '@ant-design/icons';
@@ -33,6 +33,8 @@ import avatar1 from 'assets/images/users/avatar-1.png';
 import avatar2 from 'assets/images/users/avatar-2.png';
 import avatar3 from 'assets/images/users/avatar-3.png';
 import avatar4 from 'assets/images/users/avatar-4.png';
+import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
+import MainCard from 'components/MainCard';
 
 // avatar style
 const avatarSX = {
@@ -69,7 +71,7 @@ const status = [
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
-const DashboardDefault = () => {
+const Statistic = () => {
     const [value, setValue] = useState('today');
     const [slot, setSlot] = useState('week');
 
@@ -356,4 +358,4 @@ const DashboardDefault = () => {
     );
 };
 
-export default DashboardDefault;
+export default Statistic;

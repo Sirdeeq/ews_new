@@ -71,14 +71,14 @@ const pages = {
             icon: icons.FileAddOutlined,
             target: false
         },
-        {
-            id: 'contents',
-            title: 'Contents',
-            type: 'item',
-            url: '/admin/dashboard/contents',
-            icon: icons.FundOutlined,
-            target: false
-        },
+        // {
+        //     id: 'contents',
+        //     title: 'Contents',
+        //     type: 'item',
+        //     url: '/admin/dashboard/contents',
+        //     icon: icons.FundOutlined,
+        //     target: false
+        // },
         {
             id: 'contacts',
             title: 'Contacts',
@@ -94,15 +94,15 @@ const pages = {
             url: '/admin/dashboard/statistics',
             icon: icons.BarChartOutlined,
             target: false
-        },
-        {
-            id: 'warnings',
-            title: 'News',
-            type: 'item',
-            url: '/admin/dashboard/warnings',
-            icon: icons.WarningOutlined,
-            target: false
         }
+        // {
+        //     id: 'warnings',
+        //     title: 'News',
+        //     type: 'item',
+        //     url: '/admin/dashboard/warnings',
+        //     icon: icons.WarningOutlined,
+        //     target: false
+        // }
     ]
 };
 
