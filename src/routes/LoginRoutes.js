@@ -7,6 +7,7 @@ import MinimalLayout from 'layout/MinimalLayout';
 import MainLayout from 'layout/MainLayout/index';
 import EditWarning from 'pages/extra-pages/EditWarning';
 import ViewUser from 'pages/extra-pages/ViewUser';
+import AddNewContact from 'pages/extra-pages/AddNewContact';
 
 // render - login
 
@@ -24,6 +25,7 @@ const Users = Loadable(lazy(() => import('pages/extra-pages/Users')));
 const Contents = Loadable(lazy(() => import('pages/extra-pages/Content')));
 const History = Loadable(lazy(() => import('pages/extra-pages/History')));
 const Requests = Loadable(lazy(() => import('pages/extra-pages/Requests')));
+const Contacts = Loadable(lazy(() => import('pages/extra-pages/Contacts')));
 // const Requests = Loadable(lazy(() => import('pages/extra-pages/Requests')));
 const Statistics = Loadable(lazy(() => import('pages/extra-pages/Statistics')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
@@ -116,6 +118,20 @@ const LoginRoutes = {
                         {
                             path: 'contents',
                             element: <Contents />
+                        },
+                        {
+                            path: 'contacts',
+                            element: <Contacts />,
+                            children: [
+                                {
+                                    path: '/admin/dashboard/contacts/new-contact',
+                                    element: <AddNewContact />
+                                }
+                            ]
+                        },
+                        {
+                            path: 'new-contact',
+                            element: <AddNewContact />
                         }
                     ]
                 }

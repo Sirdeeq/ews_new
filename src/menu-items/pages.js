@@ -83,7 +83,7 @@ const pages = {
             id: 'contacts',
             title: 'Contacts',
             type: 'item',
-            url: '/admin/dashboard/warnings',
+            url: '/admin/dashboard/contacts',
             icon: icons.ContactsOutlined,
             target: false
         },
